@@ -6,7 +6,20 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  // url      = env("DATABASE_URL")
-  url      = "file:./dev.db"
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
+
+// Not generated -> NOT READY TO GENERATE
+model Person {
+  cpf         String    @id @unique
+  Insurance   String?
+  name        String
+  phoneNumber String
+  houseNumber String?
+  createdAt   DateTime? @default(now())
+  updatedAt   DateTime? @updatedAt
+}
+
+// Queue Model?
+
