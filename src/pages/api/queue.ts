@@ -15,11 +15,11 @@ type Data = {
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
   res.status(200).json({
-    actualCall: { name: "Sam", cpf: "128", type: "Consulta" },
+    actualCall: { name: "Samuel Teixeira Pires Mota", cpf: "128.265.213-21", type: "Consulta" },
     lastCalls: [
-      { name: 'João', cpf: ":)", type: "Consulta" },
-      { name: 'Maria', cpf: ":)", type: "Exame" },
-      { name: 'Diego', cpf: ":)", type: "Exame" },
+      { name: '', cpf: "987.123.747-21", type: "Consulta" },
+      { name: 'Maria Clara de Souza', cpf: ":)", type: "Exame" },
+      { name: 'João Cândido Pereira', cpf: ":)", type: "Exame" },
     ]
   })
 }
