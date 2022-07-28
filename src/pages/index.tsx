@@ -1,14 +1,15 @@
 import type { GetServerSideProps, NextPage } from 'next'
-import Head from 'next/head'
 import Image from 'next/image'
+
 import CallPanel from '../components/CallPanel'
-// import ""
+import HeadC from '../components/HeadC'
 
 export type QueueType = {
   // uuid: string;
   name?: string;
   cpf: string;
   type: string;
+  counter: number;
 }
 
 export type Data = {
@@ -21,11 +22,7 @@ const Home: NextPage<Data> = ({ actualCall, lastCalls }: Data) => {
   // console.table(lastCalls)
   return (
     <div>
-      <Head>
-        <title>QMS: Home</title>
-        <meta name="description" content="Queue Management System for Enterprises" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <HeadC page="Home" />
       <div className="w-full bg-cyan-600 p-2 flex flex-row">
         <Image src="/tuê.TI.png" height="48px" width="48px" alt="Tuê Informática" />
         <p className='px-2.5 text-xl font-bold my-auto'>Queue</p> {/* Nome da empresa? Só fila ou sem header? */}
